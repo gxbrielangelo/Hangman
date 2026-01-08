@@ -5,4 +5,6 @@ module at.ac.hcw.hangman {
 
     opens at.ac.hcw.hangman to javafx.fxml;
     exports at.ac.hcw.hangman;
+    exports at.ac.hcw.hangman.model;
+    opens at.ac.hcw.hangman.model to javafx.fxml;
 }
