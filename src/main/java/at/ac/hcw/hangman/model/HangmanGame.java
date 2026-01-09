@@ -68,4 +68,6 @@ public class HangmanGame {
         public int getRemainingLives() {
             return 6 - wrongGuesses;
         }
+
+        public Difficulty getDifficulty() { return this.difficulty; }
     }
