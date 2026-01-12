@@ -9,6 +9,17 @@ public class WordGenerator {
     private Map<Difficulty, List<String>> wordPool = new HashMap<>();
     private HangmanGame game;
 
+    public WordGenerator () {
+        List<String> easy = new ArrayList<>();
+        wordPool.put(Difficulty.EASY, easy);
+
+        List<String> medium = new ArrayList<>();
+        wordPool.put(Difficulty.MEDIUM, medium);
+
+        List<String> hard = new ArrayList<>();
+        wordPool.put(Difficulty.HARD, hard);
+    }
+
     public WordGenerator (String folderPath) {
         File folder = new File(folderPath);
         File easyWordsFile = new File(folder, "easy.txt");
@@ -38,5 +49,9 @@ public class WordGenerator {
 
         Random rand = new Random();
         return words.get(rand.nextInt(words.size()));
+    }
+
+    public boolean putWord (Difficulty difficulty, String word) {
+        return wordPool.get(difficulty).add(word);
     }
 }
