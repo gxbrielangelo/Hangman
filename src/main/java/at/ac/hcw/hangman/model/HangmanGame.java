@@ -22,15 +22,18 @@ public class HangmanGame {
 
             if (guessedLetters.contains(letter)) {
                 // Buchstabe wurde schon geraten -> nichts tun oder Exception werfen
+                System.out.println("Buchstabe schon geraten");
                 return false;
             }
 
             guessedLetters.add(letter);
 
             if (secretWord.indexOf(letter) >= 0) {
+                System.out.println("Buchstabe erraten");
                 return true; // Treffer
             } else {
                 wrongGuesses++;
+                System.out.println("Buchstabe nicht drinnen");
                 return false; // Fehler
             }
         }
