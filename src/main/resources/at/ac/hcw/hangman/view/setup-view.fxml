@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" spacing="15.0" style="-fx-background-color: #C8BFE7;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.hcw.hangman.SetupController">
+   <children>
+      <Label layoutX="185.0" layoutY="183.0" style="-fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 20px; -fx-text-fill: #4b0082; -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.25) , 2, 0.3 , 1 , 1 );;" text="Enter your nickname:">
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+      </Label>
+      <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #ffe6f0; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2;">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </TextField>
+      <Label style="-fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 20px; -fx-text-fill: #4b0082; -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.25) , 2, 0.3 , 1 , 1 );;" text="Choose the difficulty level">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Label>
+      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 5 70 5 70;" text="Easy">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Button>
+      <Button layoutX="222.0" layoutY="216.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 5 70 5 70;" text="Medium" />
+      <Button layoutX="222.0" layoutY="195.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 5 70 5 70;" text="Difficult" />
+      <Button alignment="CENTER" mnemonicParsing="false" onAction="#onStartGameClick" style="-fx-background-color: #f4b6c2; -fx-text-fill: #ffffff; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 17px; -fx-font-weight: bold; -fx-background-radius: 20; -fx-padding: 5 70 5 70; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-cursor: hand;" text="Start the Game">
+         <font>
+            <Font size="23.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin></Button>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

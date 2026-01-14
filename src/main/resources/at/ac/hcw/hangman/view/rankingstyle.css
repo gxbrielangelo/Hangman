@@ -1,0 +1,68 @@
+/* ===== ROOT TABLE CONTAINER ===== */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #f4b6c2;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 0;
+}
+
+/* ===== HEADER BAR ===== */
+.table-view .column-header-background {
+    -fx-background-color: #3a3a66;
+    -fx-background-radius: 20 20 0 0;
+    -fx-padding: 0;
+}
+
+/* REMOVE HEADER GAPS */
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+/* HEADER CELLS */
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* HEADER TEXT */
+.table-view .column-header .label {
+    -fx-text-fill: #f4b6c2;
+    -fx-font-family: "Arial Rounded MT Bold";
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+}
+
+/* ===== TABLE BODY BACKGROUND ===== */
+.table-view .virtual-flow {
+    -fx-background-color: #2b2b44;
+    -fx-background-radius: 0 0 20 20;
+}
+
+/* TABLE CELLS */
+.table-view .table-cell {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+    -fx-border-color: transparent;
+}
+
+/* ROW COLORS */
+.table-row-cell {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #303058;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #2b2b44;
+}
+
+/* REMOVE CORNER + SCROLLBAR BACKGROUND */
+.table-view .corner,
+.table-view .scroll-bar {
+    -fx-background-color: transparent;
+}

@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="at.ac.hcw.hangman.HelloController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #C8BFE7;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.hcw.hangman.HelloController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+   <ImageView fitHeight="322.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@images/hangman.png" />
+      </image></ImageView>
+   <Button mnemonicParsing="false" onAction="#onHelloButtonClick" style="-fx-background-color: #f4b6c2; -fx-text-fill: #ffffff; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 25px; -fx-font-weight: bold; -fx-background-radius: 20; -fx-padding: 5 15 5 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-cursor: hand;" text="Start">
+      <font>
+         <Font size="16.0" />
+      </font></Button>
+   <Button layoutX="268.0" layoutY="396.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 20; -fx-padding: 5 15 5 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-cursor: hand;" text="Leaderboard">
+      <font>
+         <Font size="10.0" />
+      </font>
+   </Button>
 </VBox>

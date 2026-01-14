@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #1e1e2f, #2b2b44);;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.hcw.hangman.RankingController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-font-weight: bold;; -fx-text-fill: #f4b6c2;; -fx-font-family: &quot;Arial Rounded MT Bold&quot;;; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 10, 0.5, 0, 0);;" text="L E A D E R B O A R D" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Label>
+      <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="230.0" style="-fx-background-color: transparent; -fx-border-color: #f4b6c2; -fx-border-radius: 20; -fx-background-radius: 10;" styleClass="-fx-table-header-border-color: transparent;" stylesheets="@rankingstyle.css">
+        <columns>
+          <TableColumn prefWidth="60.0" style="-fx-table-header-border-color:: transparent; -fx-text-fill:: #f4b6c2;;" text="Rank" />
+          <TableColumn prefWidth="110.0" text="Player" />
+            <TableColumn prefWidth="60.0" text="Score" />
+        </columns>
+         <VBox.margin>
+            <Insets top="12.0" />
+         </VBox.margin>
+      </TableView>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+         <children>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: #f4b6c2; -fx-text-fill: #ffffff; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-cursor: hand; -fx-padding: 5 15 5 15; -fx-background-size: 20px;;" text="RESTART" />
+            <Button alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: #f4b6c2;; -fx-padding: 5 15 5 15;; -fx-font-family: &quot;Arial Rounded MT Bold&quot;;; -fx-text-fill: #ffffff;; -fx-font-size: 16px;; -fx-font-weight: bold;; -fx-background-radius: 20;; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2);; -fx-cursor: hand;;" text="EXIT" textAlignment="CENTER" />
+         </children>
+         <VBox.margin>
+            <Insets top="-20.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="25.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

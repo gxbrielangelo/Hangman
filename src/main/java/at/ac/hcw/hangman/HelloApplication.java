@@ -15,12 +15,12 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("view/hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
 
-        // Setup Phase
+        /* Setup Phase
         WordGenerator wordGenerator = new WordGenerator();
         wordGenerator.putWord(Difficulty.EASY, "HELLO");
         wordGenerator.putWord(Difficulty.EASY, "WORLD");
@@ -52,5 +52,7 @@ public class HelloApplication extends Application {
                 break;
             }
         }
+
+         */
     }
 }

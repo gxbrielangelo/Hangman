@@ -11,24 +11,23 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class HelloController {
+public class SetupController {
 
     @FXML
-    protected void onHelloButtonClick(ActionEvent event) {
+    protected void onStartGameClick(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(
-                    getClass().getResource("view/setup-view.fxml") // relative path to controller
+                    Objects.requireNonNull(getClass().getResource("view/game-view.fxml"))
             );
-
-            Scene scene = new Scene(fxmlLoader.load());
+            Parent root = fxmlLoader.load();
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, 600, 450);
             stage.setScene(scene);
             stage.show();
 
         } catch (IOException e) {
-            e.printStackTrace(); // always print exceptions to debug
+            e.printStackTrace();
         }
     }
-
 }
