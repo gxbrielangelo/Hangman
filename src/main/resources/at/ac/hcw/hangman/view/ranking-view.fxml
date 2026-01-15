@@ -15,11 +15,11 @@
             <Insets top="20.0" />
          </VBox.margin>
       </Label>
-      <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="230.0" style="-fx-background-color: transparent; -fx-border-color: #f4b6c2; -fx-border-radius: 20; -fx-background-radius: 10;" styleClass="-fx-table-header-border-color: transparent;" stylesheets="@rankingstyle.css">
+      <TableView fx:id="rankingTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="230.0" style="-fx-background-color: transparent; -fx-border-color: #f4b6c2; -fx-border-radius: 20; -fx-background-radius: 10;" styleClass="-fx-table-header-border-color: transparent;" stylesheets="@rankingstyle.css">
         <columns>
-          <TableColumn prefWidth="60.0" style="-fx-table-header-border-color:: transparent; -fx-text-fill:: #f4b6c2;;" text="Rank" />
-          <TableColumn prefWidth="110.0" text="Player" />
-            <TableColumn prefWidth="60.0" text="Score" />
+          <TableColumn fx:id="rankColumn" prefWidth="60.0" style="-fx-table-header-border-color: transparent; -fx-text-fill: #f4b6c2;;" text="Rank" />
+          <TableColumn fx:id="playerColumn" prefWidth="110.0" text="Player" />
+            <TableColumn fx:id="scoreColumn" prefWidth="60.0" text="Score" />
         </columns>
          <VBox.margin>
             <Insets top="12.0" />
