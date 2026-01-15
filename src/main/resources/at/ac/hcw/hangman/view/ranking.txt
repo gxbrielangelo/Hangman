@@ -1,0 +1,7 @@
+Jagoda 100
+Deni 200
+Gabriel 300
+Mathew 150
+Jason 450
+Anna 150
+Ben 250

@@ -14,6 +14,11 @@ import java.util.Scanner;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        String words = WordGiver.getWord(1);
+        System.out.println("Word: " + words);
+        SaveScore.saveScore("Anna", 150);
+        SaveScore.saveScore("Ben", 250);
+
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("view/hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
