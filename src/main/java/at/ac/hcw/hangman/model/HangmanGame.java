@@ -57,6 +57,7 @@ public class HangmanGame {
                     return false;
                 }
             }
+
             return true;
         }
 
@@ -64,9 +65,7 @@ public class HangmanGame {
             return wrongGuesses >= 6;
         }
 
-        public int getWrongGuesses() {
-            return wrongGuesses;
-        }
+        public int getWrongGuesses() { return wrongGuesses; }
 
         public int getRemainingLives() {
             return 6 - wrongGuesses;
