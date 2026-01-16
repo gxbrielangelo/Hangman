@@ -132,7 +132,7 @@
             </HBox>
          </center>
       </BorderPane>
-      <Pane style="-fx-background-color: rgba(0, 0, 0, 0.55);;">
+      <Pane style="-fx-background-color: rgba(0, 0, 0, 0.55);;" visible="false">
          <children>
             <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="40.0">
                <children>
@@ -148,5 +148,7 @@
             </VBox>
          </children>
       </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+      <Pane prefHeight="200.0" prefWidth="200.0" />
    </children>
 </StackPane>
