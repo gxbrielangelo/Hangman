@@ -17,12 +17,12 @@
                         <Image url="@images/Screenshot%202026-01-15%20205834.png" />
                      </image>
                      <HBox.margin>
-                        <Insets top="18.0" />
+                        <Insets top="10.0" />
                      </HBox.margin>
                   </ImageView>
                   <Button layoutX="562.0" layoutY="31.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: #FAD64A; -fx-text-fill: #ffffff; -fx-background-radius: 25; -fx-border-radius: 25; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 17px;" text="?">
                      <HBox.margin>
-                        <Insets right="180.0" top="20.0" />
+                        <Insets right="180.0" top="10.0" />
                      </HBox.margin>
                   </Button>
                   <Label text="Points: 0" />
@@ -79,9 +79,15 @@
                               <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="P" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="O" GridPane.rowIndex="2" />
                               <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="J" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="C" GridPane.columnIndex="2" />
+                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="C" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin></Button>
                               <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="I" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="H" GridPane.rowIndex="1" />
+                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="H" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin></Button>
                               <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="V" GridPane.columnIndex="6" GridPane.rowIndex="2" />
                               <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="N" GridPane.columnIndex="6" GridPane.rowIndex="1" />
                               <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="G" GridPane.columnIndex="6" />
@@ -98,7 +104,7 @@
                               <Button layoutX="316.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="A" />
                            </children>
                            <VBox.margin>
-                              <Insets />
+                              <Insets left="5.0" />
                            </VBox.margin>
                         </GridPane>
                         <Label prefHeight="92.0" prefWidth="349.0" text="_ _ _ _ _ _">
@@ -114,14 +120,33 @@
                         </Label>
                      </children>
                   </VBox>
-                  <ImageView fitHeight="268.0" fitWidth="254.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="274.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/subienica.png" />
                      </image>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
                   </ImageView>
                </children>
             </HBox>
          </center>
       </BorderPane>
+      <Pane style="-fx-background-color: rgba(0, 0, 0, 0.55);;">
+         <children>
+            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="40.0">
+               <children>
+                  <Label style="-fx-background-color: #B88AB1; -fx-background-radius: 2; -fx-border-radius: 2; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 6, 0.3, 0, 2); -fx-padding: 10 30 10 30;" text="PAUSE MENU" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff;; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2);; -fx-font-family: &quot;Arial Rounded MT Bold&quot;;; -fx-font-size: 15px;; -fx-font-weight: bold;; -fx-padding: 5 65 5 65;;" text="Continue">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="221.0" layoutY="180.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 5 65 5 65; -fx-min-width: 196;" text="Restart" />
+                  <Button layoutX="221.0" layoutY="146.0" mnemonicParsing="false" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 5 65 5 65; -fx-min-width: 196;" text="Quit" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
    </children>
 </StackPane>

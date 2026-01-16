@@ -17,7 +17,7 @@ public class SetupController {
     protected void onStartGameClick(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(
-                    Objects.requireNonNull(getClass().getResource("view/ranking-view.fxml"))
+                    Objects.requireNonNull(getClass().getResource("view/game-view.fxml"))
             );
             Parent root = fxmlLoader.load();
 
