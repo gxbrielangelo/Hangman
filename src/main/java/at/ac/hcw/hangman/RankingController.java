@@ -95,4 +95,27 @@ public class RankingController {
             e.printStackTrace();
         }
     }
+    @FXML
+    protected void restartButton(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    getClass().getResource("view/setup-view.fxml") // relative path to controller
+            );
+
+            Scene scene = new Scene(fxmlLoader.load());
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace(); // always print exceptions to debug
+        }
+    }
+
+    @FXML
+    public void quitButton(ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
 }

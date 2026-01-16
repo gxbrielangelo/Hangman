@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,7 +15,17 @@ import java.util.Objects;
 public class GameController {
 
     @FXML
-    protected void onFinishGameClick(ActionEvent event) {
+    private Pane gamewon;
+
+    @FXML
+    private Pane gamewin;
+
+    @FXML
+    private Pane pausemenu;
+
+
+    @FXML
+    protected void openRanking(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(
                     Objects.requireNonNull(getClass().getResource("view/ranking-view.fxml"))
@@ -48,4 +59,43 @@ public class GameController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    protected void restartButton(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    getClass().getResource("view/setup-view.fxml") // relative path to controller
+            );
+
+            Scene scene = new Scene(fxmlLoader.load());
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace(); // always print exceptions to debug
+        }
+    }
+    @FXML
+    protected void continueButton(ActionEvent event) {
+        pausemenu.setVisible(false);
+        //pausemenu.setManaged(false);
+    }
+
+    @FXML
+    protected void pauseButton(ActionEvent event) {
+        pausemenu.setVisible(true);
+        //pausemenu.setManaged(false);
+    }
+
+    @FXML
+    public void quitButton(ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+
+
+
 }

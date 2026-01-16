@@ -30,5 +30,22 @@ public class HelloController {
             e.printStackTrace(); // always print exceptions to debug
         }
     }
+    @FXML
+    protected void openRanking(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    Objects.requireNonNull(getClass().getResource("view/ranking-view.fxml"))
+            );
+            Parent root = fxmlLoader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, 600, 450);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

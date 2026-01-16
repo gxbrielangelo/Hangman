@@ -18,7 +18,7 @@
       <font>
          <Font size="16.0" />
       </font></Button>
-   <Button layoutX="268.0" layoutY="396.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 20; -fx-padding: 5 15 5 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-cursor: hand;" text="Leaderboard">
+   <Button layoutX="268.0" layoutY="396.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openRanking" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 20; -fx-padding: 5 15 5 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-cursor: hand;" text="Leaderboard">
       <font>
          <Font size="10.0" />
       </font>
