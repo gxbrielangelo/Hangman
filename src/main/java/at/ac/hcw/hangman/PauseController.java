@@ -11,13 +11,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class GameController {
-
+public class PauseController {
     @FXML
-    protected void onFinishGameClick(ActionEvent event) {
+    protected void onContinueButtonClick(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(
-                    Objects.requireNonNull(getClass().getResource("view/ranking-view.fxml"))
+                    Objects.requireNonNull(getClass().getResource("view/game-view.fxml"))
             );
             Parent root = fxmlLoader.load();
 
@@ -32,10 +31,28 @@ public class GameController {
     }
 
     @FXML
-    protected void onPauseButtonClick(ActionEvent event) {
+    protected void onRestartButtonClick(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(
-                    Objects.requireNonNull(getClass().getResource("view/pause-view.fxml"))
+                    Objects.requireNonNull(getClass().getResource("view/setup-view.fxml"))
+            );
+            Parent root = fxmlLoader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, 600, 450);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    protected void onQuitButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    Objects.requireNonNull(getClass().getResource("view/exit-view.fxml"))
             );
             Parent root = fxmlLoader.load();
 

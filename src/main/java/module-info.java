@@ -2,6 +2,7 @@ module at.ac.hcw.hangman {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.base;
+    requires javafx.graphics;
 
 
     opens at.ac.hcw.hangman to javafx.fxml;

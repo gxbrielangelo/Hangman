@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.hcw.hangman.GameController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #C8BFE7;">
          <top>
@@ -14,7 +15,7 @@
                <children>
                   <ImageView fitHeight="38.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/Screenshot%202026-01-15%20205834.png" />
+                        <Image url="@images/hintbutton.png" />
                      </image>
                      <HBox.margin>
                         <Insets top="10.0" />
@@ -38,10 +39,13 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="37.0" style="-fx-background-color: #A6A6A6; -fx-text-fill: #ffffff; -fx-background-radius: 25; -fx-border-radius: 25; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 17px;" text="I I">
+                  <Button mnemonicParsing="false" onAction="#onPauseButtonClick" prefHeight="36.0" prefWidth="37.0" style="-fx-background-color: #A6A6A6; -fx-text-fill: #ffffff; -fx-background-radius: 25; -fx-border-radius: 25; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 17px;" text="I I">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
                <padding>
@@ -71,37 +75,112 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="Y" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="B" GridPane.columnIndex="1" />
-                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="X" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="W" GridPane.rowIndex="3" />
-                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="R" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="P" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="O" GridPane.rowIndex="2" />
-                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="J" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="48.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="Y" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="50.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="B" GridPane.columnIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="47.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="X" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="12.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="W" GridPane.rowIndex="3">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="R" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="50.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="P" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="O" GridPane.rowIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="50.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="J" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
                               <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="C" GridPane.columnIndex="2">
                                  <GridPane.margin>
                                     <Insets />
-                                 </GridPane.margin></Button>
-                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="I" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </GridPane.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="51.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="I" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
                               <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="H" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets />
-                                 </GridPane.margin></Button>
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="V" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="N" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="G" GridPane.columnIndex="6" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="U" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="M" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="F" GridPane.columnIndex="5" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="T" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="L" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="E" GridPane.columnIndex="4" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="Z" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="S" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="K" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="D" GridPane.columnIndex="3" />
-                              <Button layoutX="316.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="A" />
+                                 </GridPane.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="V" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="N" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="G" GridPane.columnIndex="6">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="52.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="U" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="M" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="47.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="F" GridPane.columnIndex="5">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="54.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="T" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="50.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="L" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="49.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="E" GridPane.columnIndex="4">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="49.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="Z" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="58.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="S" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="52.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="K" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="112.0" layoutY="159.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="52.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="D" GridPane.columnIndex="3">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button layoutX="316.0" layoutY="159.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="50.0" style="-fx-background-color: #FAD7EB; -fx-text-fill: #4b1c6b; -fx-background-radius: 50; -fx-border-radius: 50; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px;;" text="A">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
                            </children>
                            <VBox.margin>
                               <Insets left="5.0" />
@@ -132,21 +211,5 @@
             </HBox>
          </center>
       </BorderPane>
-      <Pane style="-fx-background-color: rgba(0, 0, 0, 0.55);;">
-         <children>
-            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="40.0">
-               <children>
-                  <Label style="-fx-background-color: #B88AB1; -fx-background-radius: 2; -fx-border-radius: 2; -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 22px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 6, 0.3, 0, 2); -fx-padding: 10 30 10 30;" text="PAUSE MENU" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff;; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2);; -fx-font-family: &quot;Arial Rounded MT Bold&quot;;; -fx-font-size: 15px;; -fx-font-weight: bold;; -fx-padding: 5 65 5 65;;" text="Continue">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button layoutX="221.0" layoutY="180.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 5 65 5 65; -fx-min-width: 196;" text="Restart" />
-                  <Button layoutX="221.0" layoutY="146.0" mnemonicParsing="false" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 5 65 5 65; -fx-min-width: 196;" text="Quit" />
-               </children>
-            </VBox>
-         </children>
-      </Pane>
    </children>
 </StackPane>
