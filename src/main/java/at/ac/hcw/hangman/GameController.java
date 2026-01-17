@@ -52,12 +52,16 @@ public class GameController {
     @FXML
     private ImageView gallows;
 
+    @FXML
+    private Label correctWord;
+
 
 
     private HangmanGame game;
     private Difficulty difficulty;
     private String player;
     private String word;
+
 
 
     public void setGameData(String player,Difficulty difficulty) {
@@ -76,6 +80,7 @@ public class GameController {
         System.out.println("Word loaded: " + game.getDisplayWord());
 
         displayWord.setText(game.getDisplayWord());
+        correctWord.setText(game.getSecretWord());
 
     }
 

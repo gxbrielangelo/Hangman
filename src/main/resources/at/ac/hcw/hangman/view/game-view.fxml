@@ -189,14 +189,19 @@
         </Pane>
         <Pane id="looser" fx:id="gamelost" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.90);" visible="false">
             <children>
-                <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
+                <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="15.0">
                     <children>
-                        <Label style="-fx-text-fill: #FFE644; -fx-font-family: &quot;Lucida Calligraphy&quot;;; -fx-font-size: 80px;;" text="You Lost!" />
+                        <Label style="-fx-text-fill: #FFE644; -fx-font-family: &quot;Lucida Calligraphy&quot;;; -fx-font-size: 80px;;" text="You Lost!">
+                     <VBox.margin>
+                        <Insets top="60.0" />
+                     </VBox.margin></Label>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                             <children>
                                 <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openRanking" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 5 65 5 65; -fx-min-width: 207,2;" text="Ranking" />
                                 <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#restartButton" style="-fx-background-color: #ffd6e8; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 0, 2); -fx-font-family: &quot;Arial Rounded MT Bold&quot;; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 5 65 5 65; -fx-min-width: 207,2;" text="Play Again" />
                             </children></HBox>
+                  <Label layoutX="116.0" layoutY="90.0" style="-fx-text-fill: #FFE644; -fx-font-family: &quot;Lucida Calligraphy&quot;; -fx-font-size: 20px;" text="The correct word:" />
+                  <Label fx:id="correctWord" layoutX="216.0" layoutY="351.0" style="-fx-text-fill: #FFE644; -fx-font-family: &quot;Lucida Calligraphy&quot;; -fx-font-size: 20px;" />
                     </children>
                 </VBox>
             </children>

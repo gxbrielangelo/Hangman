@@ -5,3 +5,4 @@ Mathew 150
 Jason 450
 Anna 150
 Ben 250
+Player 1 100

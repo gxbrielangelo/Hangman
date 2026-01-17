@@ -72,4 +72,8 @@ public class HangmanGame {
         }
 
         public Difficulty getDifficulty() { return this.difficulty; }
+
+        public String getSecretWord() {
+            return this.secretWord;
+        }
     }
