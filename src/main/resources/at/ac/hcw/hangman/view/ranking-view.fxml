@@ -15,7 +15,7 @@
             <Insets top="20.0" />
          </VBox.margin>
       </Label>
-      <TableView fx:id="rankingTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="256.0" style="-fx-background-color: transparent; -fx-border-color: #f4b6c2; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="-fx-table-header-border-color: transparent;" stylesheets="@rankingstyle.css">
+      <TableView fx:id="rankingTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="326.0" prefWidth="235.0" style="-fx-background-color: transparent; -fx-border-color: #f4b6c2; -fx-border-radius: 0; -fx-background-radius: 0;" styleClass="-fx-table-header-border-color: transparent;" stylesheets="@rankingstyle.css">
         <columns>
           <TableColumn fx:id="rankColumn" prefWidth="60.0" style="-fx-table-header-border-color: transparent; -fx-text-fill: #f4b6c2;;" text="Rank" />
           <TableColumn fx:id="playerColumn" prefWidth="110.0" text="Player" />
