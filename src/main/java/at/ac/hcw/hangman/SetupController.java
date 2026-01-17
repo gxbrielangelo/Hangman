@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -63,13 +60,22 @@ public class SetupController {
     @FXML
     protected void onStartGameClick(ActionEvent event) {
         try {
+            String name = nickname.getText();
+            if (name == null || name.trim().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid Nickname");
+                alert.setHeaderText(null);
+                alert.setContentText("Please enter a nickname.");
+                alert.showAndWait();
+                return;
+            }
+
             FXMLLoader fxmlLoader = new FXMLLoader(
                     Objects.requireNonNull(getClass().getResource("view/game-view.fxml"))
             );
 
             Parent root = fxmlLoader.load();
 
-            String name = nickname.getText();
             System.out.println("Player: " + name);
             System.out.println("Difficulty: " + difficulty);
 
