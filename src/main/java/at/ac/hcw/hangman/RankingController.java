@@ -40,13 +40,18 @@ public class RankingController {
         ObservableList<PlayerScore> data = FXCollections.observableArrayList();
 
         for (String entry : rankingStrings) {
-            String[] parts = entry.split(" ");
-            if (parts.length == 2) {
-                try {
-                    String player = parts[0];
-                    int score = Integer.parseInt(parts[1]);
-                    data.add(new PlayerScore(player, score));
-                } catch (NumberFormatException ignored) { }
+            int lastSpace = entry.lastIndexOf(' ');
+            if (lastSpace == -1) {
+                continue;
+            }
+
+            String player = entry.substring(0, lastSpace).trim();
+            String scorePart = entry.substring(lastSpace + 1).trim();
+
+            try {
+                int score = Integer.parseInt(scorePart);
+                data.add(new PlayerScore(player, score));
+            } catch (NumberFormatException ignored) {
             }
         }
 

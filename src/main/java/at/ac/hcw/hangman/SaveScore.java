@@ -4,52 +4,56 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class SaveScore {
     private static final String RANKING_FILE = "src/main/resources/at/ac/hcw/hangman/view/ranking.txt";
 
     public static void saveScore(String name, int score) {
-        if (doesNameExists(name)) {
-            return;
+        Path path = Paths.get(RANKING_FILE);
+
+        Map<String, Integer> scores = new HashMap<>();
+
+        if (Files.exists(path)) {
+            try {
+                List<String> lines = Files.readAllLines(path);
+                for (String line : lines) {
+                    int lastSpace = line.lastIndexOf(' ');
+                    if (lastSpace == -1) {
+                        continue;
+                    }
+
+                    String existingName = line.substring(0, lastSpace).trim();
+                    String scorePart = line.substring(lastSpace + 1).trim();
+
+                    try {
+                        int existingScore = Integer.parseInt(scorePart);
+                        scores.put(existingName, existingScore);
+                    } catch (NumberFormatException ignored) {
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        String content = name + " " + score + System.lineSeparator();
+        scores.put(name, scores.getOrDefault(name, 0) + score);
+
         try {
-            Path path = Paths.get(RANKING_FILE);
             if (path.getParent() != null) {
                 Files.createDirectories(path.getParent());
             }
 
-            if (Files.exists(path) && Files.size(path) > 0) {
-                String currentContent = Files.readString(path);
-                if (!currentContent.endsWith(System.lineSeparator())) {
-                    content = System.lineSeparator() + content;
-                }
-            }
+            List<String> linesToWrite = scores.entrySet().stream()
+                    .map(entry -> entry.getKey() + " " + entry.getValue())
+                    .collect(Collectors.toList());
 
-            Files.writeString(path, content, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+            Files.write(path, linesToWrite);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private static boolean doesNameExists(String name) {
-        try {
-            Path path = Paths.get(RANKING_FILE);
-            if (!Files.exists(path)) {
-                return false;
-            }
-            java.util.List<String> lines = Files.readAllLines(path);
-            for (String line : lines) {
-                String[] parts = line.trim().split(" ");
-                if (parts.length > 0 && parts[0].equals(name)) {
-                    return true;
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false;
     }
 }

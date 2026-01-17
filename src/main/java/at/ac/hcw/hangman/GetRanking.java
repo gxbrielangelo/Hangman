@@ -23,14 +23,18 @@ public class GetRanking {
         try (BufferedReader br = Files.newBufferedReader(path)) {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] parts = line.trim().split(" ");
-                if (parts.length == 2) {
-                    String name = parts[0];
-                    try {
-                        int score = Integer.parseInt(parts[1]);
-                        scores.add(new UserScore(name, score));
-                    } catch (NumberFormatException ignored) {
-                    }
+                int lastSpace = line.lastIndexOf(' ');
+                if (lastSpace == -1) {
+                    continue;
+                }
+
+                String name = line.substring(0, lastSpace).trim();
+                String scorePart = line.substring(lastSpace + 1).trim();
+
+                try {
+                    int score = Integer.parseInt(scorePart);
+                    scores.add(new UserScore(name, score));
+                } catch (NumberFormatException ignored) {
                 }
             }
         } catch (IOException e) {
