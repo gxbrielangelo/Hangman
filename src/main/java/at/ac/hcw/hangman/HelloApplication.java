@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         String words = WordGiver.getWord(1);
         System.out.println("Word: " + words);
-        SaveScore.saveScore("Anna", 150);
+        SaveScore.saveScore("Ben", 150);
         SaveScore.saveScore("Ben", 250);
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("view/hello-view.fxml"));
