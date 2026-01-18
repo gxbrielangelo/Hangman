@@ -12,12 +12,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Objects;
+import java.util.*;
 
 import static at.ac.hcw.hangman.WordGiver.getWord;
 import at.ac.hcw.hangman.model.Difficulty;
@@ -54,6 +55,12 @@ public class GameController {
 
     @FXML
     private Label correctWord;
+
+
+    @FXML
+    private Button hintButton;
+    @FXML
+    private GridPane letterGrid;
 
 
 
@@ -154,6 +161,47 @@ public class GameController {
     public void quitButton(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
+    }
+
+    @FXML
+    public void handleHintButton() {
+        hintButton.setText("!");
+
+        Button random = (Button) letterGrid.getChildren().get(0);
+
+        // get all letters that are not in the secret word
+        List<Node> missingLetters = new ArrayList<>();
+        for (Node node : letterGrid.getChildren()) {
+            if (node instanceof Button) {
+                Button button = (Button) node;
+
+                if (game.getNotIncludedLetters().contains(button.getText().toLowerCase().charAt(0))) {
+                    missingLetters.add(node);
+                }
+            }
+        }
+
+        // get all letters that havent been disabled from all letters that are not in the secret word
+        List<Node> enabledLetters = new ArrayList<>();
+        for (Node node : missingLetters) {
+            if (!node.isDisabled()) {
+                enabledLetters.add(node);
+            }
+        }
+
+        // randomize list of enabled Letters
+        Collections.shuffle(enabledLetters);
+
+        // get first three elements of randomized list of letters
+        List<Node> randomLetters = enabledLetters.subList(0,3);
+
+        // disable all elements (3 elements) of randomized list of letters
+        for (Node node : randomLetters) {
+            node.setDisable(true);
+        }
+
+        // disable hint button
+        hintButton.setDisable(true);
     }
 
     @FXML
