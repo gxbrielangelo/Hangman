@@ -17,11 +17,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 
 import static at.ac.hcw.hangman.WordGiver.getWord;
-import at.ac.hcw.hangman.model.Difficulty;
 
 public class GameController {
 
@@ -279,15 +277,8 @@ public class GameController {
         if(game.isWon()) {
             gamewin.setVisible(true);
 
-            // TODO GET THE SCORE USING THE SCORE FUNCTION
-            int score = 100;
+            int score = game.calculateScore();
             SaveScore.saveScore(player, score);
         }
-
-
     }
-
-
-
-
 }

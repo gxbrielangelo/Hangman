@@ -76,6 +76,24 @@ public class HangmanGame {
         return missingLetters;
     }
 
+    public int calculateScore() {
+        int wordLength = secretWord.length();
+
+        int multiplier = switch (difficulty) {
+            case EASY -> 1;
+            case MEDIUM -> 2;
+            case HARD -> 3;
+        };
+
+        int baseScore = wordLength * 50;
+        int penalty = wrongGuesses * 20;
+
+        // if finalScore is < 0 -> set to 0
+        int finalScore = Math.max(0, ((baseScore - penalty) * multiplier));
+
+        return finalScore;
+    }
+
     public boolean isLost() {
         return wrongGuesses >= 6;
     }
